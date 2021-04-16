@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "tone": "^14.7.77",
+    "web-audio-daw": "^4.10.1"
+  }
+}

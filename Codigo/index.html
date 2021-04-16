@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" conte nt="width= , initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="css/alertify.min.css" />
+    <link rel="stylesheet" href="css/themes/default.min.css" />
+    <title>Tesis</title>
+</head>
+
+
+<body>
+
+
+    <div class="header">
+
+        <div class="controls" id="controls" style="visibility: visible;">
+
+            <div class="sliderss">
+                <div class="metronome">
+                    <span class="value">BPM</span>
+                    <input type="range" min="80" max="130" step="1" class="slider " id="metronome-slider">
+                    <span id="demo" class="value"></span>
+                </div>
+                <div class="compases">
+                    <span class="value">Compases</span>
+                    <input type="range" min="1" max="4" step="1" class="slider " id="compases-slider">
+                    <span id="demo2" class="value"></span>
+                </div>
+                <!-- <div class="tonica">
+                    <span class="value">Transportar</span>
+                    <input type="range" min="0" max="12" step="1" class="slider " id="tonalidad-slider">
+                    <span id="demo3" class="value"></span>
+                </div> -->
+            </div>
+            <div class="botonesReproductor">
+                <div class="button" id="grabar"> <img src="/Imagenes/rec.png" width="30px" alt=""></div>
+                <div class="button" id="stop"> <img src="/Imagenes/stop.png" width="30px" alt=""></div>
+                <div class="button" id="play"><img src="/Imagenes/play.png" width="30px" alt=""></div>
+            </div>
+
+
+
+            <div class="botonesInstrumentos">
+                <div class="button" id="b-drumkit"><img src="/Imagenes/drums.png" width="15px" alt=""> Drumkit
+                </div>
+                <div class="button" id="b-piano"><img src="/Imagenes/piano.png" width="20px" alt=""> Keyboards
+                </div>
+                <div class="button" id="b-guitarra"><img src="/Imagenes/guitarra.png" width="14px" alt=""> Guitar
+                </div>
+                <div class="button" id="b-bajo"><img src="/Imagenes/bajo.png" width="18px" alt=""> Bass </div>
+            </div>
+
+            <div class="button " id="b-calibrar"> CALIBRAR</div>
+
+            <div class="button vista"  id="vista"> VISTA</div>
+
+        </div>
+
+        <div class="inicio" id="inicio"> </div>
+
+        <!-- <div class="webgazer">
+            <div class="button" id="b-calibrar"> Calibrar</div>
+            <span id="cordinates"> </span>
+        </div> -->
+
+
+
+        <!-- Calibracion -->
+        <div class="calibrar" id="calibrar" style="visibility:hidden;">
+            <div class="circulo" onclick="cambiar(id)" id="c1"></div>
+            <!-- <div class="circulo" onclick="cambiar(id)" id="c2"></div> -->
+            <div class="circulo" onclick="cambiar(id)" id="c3"></div>
+            <div class="circulo" onclick="cambiar(id)" id="c4"></div>
+            <!-- <div class="circulo" onclick="cambiar(id)" id="c5"></div> -->
+            <div class="circulo" onclick="cambiar(id)" id="c6"></div>
+            <div class="circulo" onclick="cambiar(id)" id="c7"></div>
+            <!-- <div class="circulo" onclick="cambiar(id)" id="c8"></div> -->
+            <!-- <div class="circulo" onclick="cambiar(id)" id="c9"></div> -->
+        </div>
+        <!-- Calibracion -->
+
+
+
+        <!-- Drumkit -->
+        <div class="drumkit" id="drumkit" style="visibility:hidden;">
+            <div class="pad" id="pad1" data-sound="kick"><img src="./drums/iconos/kick.png" alt="kick"></div>
+            <div class="pad descanzo" id="descanzo1"> </div>
+            <div class="pad" id="pad2" data-sound="snare"><img src="./drums/iconos/snare.png" alt="snare"></div>
+            <div class="pad" id="pad3" data-sound="clap"><img src="./drums/iconos/clap.png" alt="clap"></div>
+            <div class="pad descanzo" id="descanzo2"> </div>
+            <div class="pad" id="pad4" data-sound="china"><img src="./drums/iconos/crash.png" alt="china"></div>
+        </div>
+        <!-- Drumkit -->
+
+
+        <!-- Piano -->
+        <div class="piano" id="piano" style="visibility:hidden;">
+            <div class="pad pianocolor" data-sound="pianoC"><img src="./piano/iconos/c.png" alt="c"></div>
+            <div class="pad descanzo"> </div>
+            <div class="pad pianocolor" data-sound="pianoF"><img src="./piano/iconos/f.png" alt="f"></div>
+            <div class="pad pianocolor" data-sound="pianoAm"><img src="./piano/iconos/am.png" alt="am"></div>
+            <div class="pad descanzo"> </div>
+            <div class="pad pianocolor" data-sound="pianoG"><img src="./piano/iconos/g.png" alt="g"></div>
+        </div>
+        <!-- Piano -->
+
+        <!-- Guitarra -->
+        <div class="guitarra" id="guitarra" style="visibility:hidden;">
+            <div class="pad guitarracolor" data-sound="guitarraC"><img src="./guitarra/iconos/c.png" alt="c"></div>
+            <div class="pad descanzo"> </div>
+            <div class="pad guitarracolor" data-sound="guitarraF"><img src="./guitarra/iconos/f.png" alt="f"></div>
+            <div class="pad guitarracolor" data-sound="guitarraAm"><img src="./guitarra/iconos/am.png" alt="am"></div>
+            <div class="pad descanzo"> </div>
+            <div class="pad guitarracolor" data-sound="guitarraG"><img src="./guitarra/iconos/g.png" alt="g"></div>
+        </div>
+        <!-- Guitarra -->
+
+        <!-- Bajo -->
+        <div class="bajo" id="bajo" style="visibility:hidden;">
+            <div class="pad bajocolor" data-sound="bajoC"><img src="./bajo/iconos/c.png" alt="c"></div>
+            <div class="pad descanzo"> </div>
+            <div class="pad bajocolor" data-sound="bajoF"><img src="./bajo/iconos/f.png" alt="f"></div>
+            <div class="pad bajocolor" data-sound="bajoAm"><img src="./bajo/iconos/am.png" alt="am"></div>
+            <div class="pad descanzo"> </div>
+            <div class="pad bajocolor" data-sound="bajoG"><img src="./bajo/iconos/g.png" alt="g"></div>
+        </div>
+        <!-- Bajo -->
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://unpkg.com/web-audio-daw"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+<script src="webgazer.js" type="text/javascript"></script>
+<script src="alertify.min.js"></script>
+<script src="howler.min.js"></script>
+<script src="app.js"></script>
+
+</html>
